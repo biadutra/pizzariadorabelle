@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzaria Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <img src="logo.png" alt="Logo" class="logo">
+    <p class="info-horario">Horário de Funcionamento: Segunda a Domingo das 18h às 23h59</p>
+    <p class="info-endereco">Av.Oliveira Freire, 282-Parque Paulistano</p>
+
+
+
+  </header>
+  <!-- Botão Hambúrguer para mobile -->
+  <input type="checkbox" id="cart-toggle" class="cart-toggle" hidden>
+  <label for="cart-toggle" class="cart-hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  <!-- Painel do carrinho -->
+  <div id="cart-sidebar" class="cart-sidebar">
+    <!-- Carrinho renderizado via JS -->
+  </div>
+  <main id="app">
+    <!-- Catálogo de pizzas renderizado via JS -->
+  </main>
+  <div class="footer-button-container">
+    <a href="https://api.whatsapp.com/send?phone=5511993725955&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20trabalho%20da%20%40Patadecodigo!" target="_blank" class="footer-button">
+      <img src="pata.jpg" alt="Logo Pata de Código" class="footer-button-image">
+      Feito por @Patadecodigo
+    </a>
+  </div>
+  <script src="app.js"></script>
+  <div id="toast" class="toast"></div>
+
+</body>
+
+</html>

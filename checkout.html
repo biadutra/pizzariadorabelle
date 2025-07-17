@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Pizzaria</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Estilos específicos para o checkout, se necessário.
+           Caso contrário, o style.css deve cuidar do geral. */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1,
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .order-summary {
+      margin-bottom: 30px;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    .order-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px dashed #eee;
+    }
+
+    .order-item:last-child {
+      border-bottom: none;
+    }
+
+    .order-total {
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: right;
+      margin-top: 15px;
+    }
+
+    .form-section {
+      margin-bottom: 30px;
+    }
+
+    .form-label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      /* Include padding in width */
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .radio-group label {
+      margin-right: 20px;
+      font-weight: normal;
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1DA851;
+    }
+
+    .toast {
+      visibility: hidden;
+      min-width: 250px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 2px;
+      padding: 16px;
+      position: fixed;
+      z-index: 1;
+      left: 50%;
+      bottom: 30px;
+      font-size: 17px;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      visibility: visible;
+      -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+    @-webkit-keyframes fadein {
+      from {
+        bottom: 0;
+        opacity: 0;
+      }
+
+      to {
+        bottom: 30px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadein {
+      from {
+        bottom: 0;
+        opacity: 0;
+      }
+
+      to {
+        bottom: 30px;
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeout {
+      from {
+        bottom: 30px;
+        opacity: 1;
+      }
+
+      to {
+        bottom: 0;
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeout {
+      from {
+        bottom: 30px;
+        opacity: 1;
+      }
+
+      to {
+        bottom: 0;
+        opacity: 0;
+      }
+    }
+
+    /* Estilos para ocultar/mostrar campos de endereço */
+    #enderecoFields {
+      display: none;
+    }
+
+    
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Confirme seu Pedido</h1>
+    <div class="order-summary">
+      <h2>Resumo do Carrinho</h2>
+      <div id="carrinhoItensCheckout">
+      </div>
+      <div class="order-total" id="totalCarrinhoCheckout">
+      </div>
+    </div>
+
+    <form id="checkoutForm">
+      <div class="form-section">
+        <h2>Seus Dados</h2>
+        <label for="nome" class="form-label">Nome Completo:</label>
+        <input type="text" id="nome" class="form-control" required>
+
+        <label for="telefone" class="form-label">Telefone:</label>
+        <input type="tel" id="telefone" class="form-control" placeholder="(DD) 9XXXX-XXXX" required>
+      </div>
+
+      <div class="form-section">
+        <h2>Opções de Pedido</h2>
+        <label class="form-label">Deseja Retirar ou Receber em Casa?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="tipoPedido" value="entrega" id="radioEntrega" checked> Entrega</label>
+          <label><input type="radio" name="tipoPedido" value="retirada" id="radioRetirada"> Retirada</label>
+        </div>
+      </div>
+
+      <div class="form-section" id="enderecoFields">
+        <h2>Endereço de Entrega</h2>
+        <label for="endereco" class="form-label">Endereço (Rua e Número):</label>
+        <input type="text" id="endereco" class="form-control" placeholder="Ex: Rua Exemplo, 123">
+
+        <label for="bairro" class="form-label">Bairro:</label>
+        <input type="text" id="bairro" class="form-control" placeholder="Ex: Centro">
+
+        <label for="cep" class="form-label">CEP:</label>
+        <input type="text" id="cep" class="form-control" placeholder="Ex: 00000-000">
+
+        <label for="complemento" class="form-label">Complemento (opcional):</label>
+        <input type="text" id="complemento" class="form-control" placeholder="Ex: Apartamento 101, Bloco B">
+      </div>
+
+      <div class="form-section">
+        <h2>Método de Pagamento</h2>
+        <div class="radio-group">
+          <label><input type="radio" name="pagamento" value="dinheiro" required> Dinheiro</label>
+          <label><input type="radio" name="pagamento" value="cartao"> Cartão</label>
+          <label><input type="radio" name="pagamento" value="pix"> PIX</label>
+          <label><input type="radio" name="pagamento" value="vale refeicao"> Vale Refeição</label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <label for="observacoes" class="form-label">Observações (opcional):</label>
+        <textarea id="observacoes" class="form-control" rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="btn-whatsapp">Finalizar Pedido via WhatsApp</button>
+    </form>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+      const finalTotal = parseFloat(localStorage.getItem('totalCarrinho')) || 0;
+
+      const carrinhoItensCheckoutDiv = document.getElementById('carrinhoItensCheckout');
+      const totalCarrinhoCheckoutDiv = document.getElementById('totalCarrinhoCheckout');
+      const enderecoFieldsDiv = document.getElementById('enderecoFields');
+      const radioEntrega = document.getElementById('radioEntrega');
+      const radioRetirada = document.getElementById('radioRetirada');
+
+      // Função para alternar a visibilidade dos campos de endereço
+      function toggleEnderecoFields() {
+        if (radioEntrega.checked) {
+          enderecoFieldsDiv.style.display = 'block';
+          // Torna os campos de endereço obrigatórios para entrega
+          document.getElementById('endereco').required = true;
+          document.getElementById('bairro').required = true;
+          document.getElementById('cep').required = true;
+        } else {
+          enderecoFieldsDiv.style.display = 'none';
+          // Remove a obrigatoriedade dos campos para retirada
+          document.getElementById('endereco').required = false;
+          document.getElementById('bairro').required = false;
+          document.getElementById('cep').required = false;
+          // Limpa os campos de endereço se for retirada
+          document.getElementById('endereco').value = '';
+          document.getElementById('bairro').value = '';
+          document.getElementById('cep').value = '';
+          document.getElementById('complemento').value = '';
+        }
+      }
+
+      // Adiciona listeners para os botões de rádio
+      radioEntrega.addEventListener('change', toggleEnderecoFields);
+      radioRetirada.addEventListener('change', toggleEnderecoFields);
+
+      // Chamada inicial para definir o estado dos campos de endereço
+      toggleEnderecoFields();
+
+      if (carrinho.length === 0) {
+        carrinhoItensCheckoutDiv.innerHTML = '<p>Seu carrinho está vazio.</p>';
+        totalCarrinhoCheckoutDiv.textContent = 'Total: R$ 0.00';
+        document.getElementById('checkoutForm').style.display = 'none';
+      } else {
+        carrinho.forEach(item => {
+          const itemDiv = document.createElement('div');
+          itemDiv.classList.add('order-item');
+
+          let itemDesc = ""; // Inicializa vazio para construir corretamente
+          let itemPrice = 0;
+
+          if (item.meioMeio) { // Lógica para pizzas meio a meio
+            itemDesc = `Meio a Meio: ${item.primeira.nome} / ${item.segunda.nome}`;
+            itemPrice = item.preco; // O preço já vem calculado na função confirmarMeioMeio
+          } else { // Lógica para outros itens (pizzas simples, esfihas, etc.)
+            itemDesc = item.nomePersonalizado || "Item Desconhecido";
+            if (item.tamanhoSelecionado && typeof item.tamanhoSelecionado.preco === 'number') {
+              itemPrice = item.tamanhoSelecionado.preco;
+            } else if (typeof item.preco === 'number') {
+              itemPrice = item.preco;
+            } else if (typeof item.precoBroto === 'number') {
+              itemPrice = item.precoBroto;
+            }
+          }
+
+          const precoTotalItem = Number(itemPrice) * item.quantidade;
+
+          // Adiciona os detalhes ao itemDesc apenas se não for meio a meio
+          if (!item.meioMeio) {
+            if (item.tamanho && item.tamanho !== 'N/A') {
+              itemDesc += ` (${item.tamanho})`;
+            }
+            if (item.borda && item.borda.nome && item.borda.preco > 0) {
+              itemDesc += ` - Borda: ${item.borda.nome}`;
+            }
+            if (item.extrasSelecionados && item.extrasSelecionados.length > 0) {
+              itemDesc += ` + ${item.extrasSelecionados.map(e => e.nome).join(', ')}`;
+            }
+          } else { // Para meio a meio, adiciona o tamanho e borda se existirem
+            if (item.tamanho && item.tamanho !== 'N/A') {
+              itemDesc += ` (${item.tamanho})`;
+            }
+            if (item.borda && item.borda.nome && item.borda.nome !== 'N/A') {
+              itemDesc += ` - Borda: ${item.borda.nome}`;
+            }
+          }
+
+
+          itemDiv.innerHTML = `
+                        <span>${item.quantidade}x ${itemDesc}</span>
+                        <span>R$ ${precoTotalItem.toFixed(2)}</span>
+                    `;
+          carrinhoItensCheckoutDiv.appendChild(itemDiv);
+        });
+
+        totalCarrinhoCheckoutDiv.textContent = `Total: R$ ${finalTotal.toFixed(2)}`;
+      }
+
+      const btnWhatsapp = document.querySelector('.btn-whatsapp');
+      if (btnWhatsapp) {
+        btnWhatsapp.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          const nome = document.getElementById('nome').value;
+          const telefone = document.getElementById('telefone').value;
+          const tipoPedido = document.querySelector('input[name="tipoPedido"]:checked').value;
+          const metodoPagamento = document.querySelector('input[name="pagamento"]:checked').value;
+          const observacoes = document.getElementById('observacoes').value;
+
+          let mensagemWhatsApp = `Olá! Meu nome é ${nome} e gostaria de fazer um pedido:\n\n`;
+
+          mensagemWhatsApp += `*Tipo de Pedido:* ${tipoPedido.charAt(0).toUpperCase() + tipoPedido.slice(1)}\n`;
+
+          if (tipoPedido === 'entrega') {
+            const endereco = document.getElementById('endereco').value;
+            const bairro = document.getElementById('bairro').value;
+            const cep = document.getElementById('cep').value;
+            const complemento = document.getElementById('complemento').value;
+
+            // Validação básica para campos de entrega
+            if (!endereco || !bairro || !cep) {
+              if (typeof showToast === 'function') {
+                showToast("Por favor, preencha todos os campos de endereço para entrega.");
+              }
+              return; // Impede o envio do formulário
+            }
+
+            mensagemWhatsApp += `*Dados de Entrega:*\n`;
+            mensagemWhatsApp += `Endereço: ${endereco}\n`;
+            mensagemWhatsApp += `Bairro: ${bairro}\n`;
+            mensagemWhatsApp += `CEP: ${cep}\n`;
+            if (complemento) {
+              mensagemWhatsApp += `Complemento: ${complemento}\n`;
+            }
+          } else { // Retirada
+            mensagemWhatsApp += `*Dados para Retirada:*\n`;
+            mensagemWhatsApp += `Retirada no Local.\n`;
+          }
+
+          mensagemWhatsApp += `Telefone: ${telefone}\n`;
+          mensagemWhatsApp += `Pagamento: ${metodoPagamento.charAt(0).toUpperCase() + metodoPagamento.slice(1)}\n`;
+          if (observacoes) {
+            mensagemWhatsApp += `Observações: ${observacoes}\n`;
+          }
+          mensagemWhatsApp += `\n*Itens do Pedido:*\n`;
+
+          carrinho.forEach(item => {
+            let itemDesc = '';
+            itemDesc = !item.meioMeio ? itemDesc = item.nomePersonalizado || "Item Desconhecido" : `Meio a Meio: ${item.primeira.nome} / ${item.segunda.nome}`;
+            let itemPrice = item.preco;
+
+            const precoTotalItem = Number(itemPrice) * item.quantidade;
+
+            if (!item.meioMeio) {
+              if (item.tamanho && item.tamanho !== 'N/A') {
+                itemDesc += ` (${item.tamanho})`;
+              }
+              if (item.borda && item.borda.nome && item.borda.preco > 0) {
+                itemDesc += ` com borda de ${item.borda.nome}`;
+              }
+              if (item.extrasSelecionados && item.extrasSelecionados.length > 0) {
+                itemDesc += ` + ${item.extrasSelecionados.map(e => e.nome).join(', ')}`;
+              }
+            } else {
+              if (item.tamanho && item.tamanho !== 'N/A') {
+                itemDesc += ` (${item.tamanho})`;
+              }
+              if (item.borda && item.borda.nome && item.borda.nome !== 'N/A') {
+                itemDesc += ` com borda de: ${item.borda.nome}`;
+              }
+            }
+            mensagemWhatsApp += `${item.quantidade}x ${itemDesc} (R$ ${precoTotalItem.toFixed(2)})\n`;
+          });
+
+          mensagemWhatsApp += `\n*Total: R$${finalTotal.toFixed(2)}*\n`;
+
+          const numeroWhatsApp = '5511964146263'; // Seu número de telefone
+          const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensagemWhatsApp)}`;
+          window.open(urlWhatsApp, '_blank');
+
+          localStorage.removeItem('carrinho');
+          localStorage.removeItem('totalCarrinho');
+          if (typeof showToast === 'function') {
+            showToast("Pedido enviado! Redirecionando...");
+          } else {
+            console.error("showToast function is not defined.");
+          }
+
+          setTimeout(() => {
+            window.location.href = 'index.html';
+          }, 2000);
+        });
+      }
+    });
+  </script>
+  <script src="app.js"></script>
+</body>
+
+</html>
