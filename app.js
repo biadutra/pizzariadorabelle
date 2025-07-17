@@ -1,6 +1,6 @@
 // Definição das opções de borda recheada (permanece a mesma)
 const bordas = [
-  { nome: "Sem borda recheada", preco: 0 },
+  { nome: "Borda Catupiry", preco: 0 },
   { nome: "Mussarela", preco: 15.00 },
   { nome: "Cheddar", preco: 15.00 },
   { nome: "Chocolate", preco: 15.00 },
