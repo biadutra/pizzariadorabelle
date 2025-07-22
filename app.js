@@ -4,7 +4,7 @@ const bordas = [
   { nome: "Mussarela", preco: 15.00 },
   { nome: "Cheddar", preco: 15.00 },
   { nome: "Chocolate", preco: 15.00 },
-   { nome: "Sem borda recheada", preco: 0 },
+  { nome: "Sem borda recheada", preco: 0 },
   { nome: "Vulcão Mussarela", preco: 20.00 },
   { nome: "Vulcão Cheddar", preco: 20.00 },
   { nome: "Vulcão Catupiry", preco: 20.00 },
@@ -1880,36 +1880,40 @@ function abrirModalItem(itemId, tipoItem) {
   }
 
   let bordaOptions = '';
-  if (tipoItem === "pizzaSalgada" || tipoItem === "pizzaDoce") {
-    bordaOptions = `
-      <p>Borda recheada:</p>
-      <select id="bordaItem">
-        ${bordas.map((b, i) => {
-      if (tipoItem === 'pizzaDoce') {
-        return b.nome === "Sem borda recheada" ? `<option value="${i}">${b.nome} ${b.preco > 0 ? `(+R$${b.preco.toFixed(2)})` : ''}</option>` : '';
-      } else if (tipoItem === 'pizzaSalgada') {
-        return b.nome === "Chocolate" ? '' : `<option value="${i}">${b.nome} ${b.preco > 0 ? `(+R$${b.preco.toFixed(2)})` : ''}</option>`;
-      }
-      return ''; 
-    }).join('')}
-      </select>
-    `;
-  } else {
-    bordaOptions = `<input type="hidden" id="bordaItem" value="0">`; // Não há borda para outros itens
-  }
+if (tipoItem === "pizzaSalgada" || tipoItem === "pizzaDoce") {
+  bordaOptions = `
+    <p>Borda recheada:</p>
+    <select id="bordaItem">
+      ${bordas.map((b, i) => {
+        if (tipoItem === 'pizzaDoce') {
+          return (b.nome === "Sem borda recheada" || b.nome === "Chocolate")
+            ? `<option value="${i}">${b.nome} ${b.preco > 0 ? `(+R$${b.preco.toFixed(2)})` : ''}</option>`
+            : '';
+        } else if (tipoItem === 'pizzaSalgada') {
+          return b.nome !== "Chocolate"
+            ? `<option value="${i}">${b.nome} ${b.preco > 0 ? `(+R$${b.preco.toFixed(2)})` : ''}</option>`
+            : '';
+        }
+        return '';
+      }).join('')}
+    </select>
+  `;
+} else {
+  bordaOptions = `<input type="hidden" id="bordaItem" value="0">`; // Não há borda para outros itens
+}
 
-  let extrasOptions = '';
-  if (item.extras && item.extras.length > 0) {
-    extrasOptions = `
-      <p>Adicionais:</p>
-      ${item.extras.map((extra, i) => `
-        <label>
-          <input type="checkbox" class="extra-item" data-price="${extra.preco}" value="${extra.nome}">
-          ${extra.nome} (+R$${extra.preco.toFixed(2)})
-        </label><br>
-      `).join('')}
-    `;
-  }
+let extrasOptions = '';
+if (item.extras && item.extras.length > 0) {
+  extrasOptions = `
+    <p>Adicionais:</p>
+    ${item.extras.map((extra, i) => `
+      <label>
+        <input type="checkbox" class="extra-item" data-price="${extra.preco}" value="${extra.nome}">
+        ${extra.nome} (+R$${extra.preco.toFixed(2)})
+      </label><br>
+    `).join('')}
+  `;
+}
 
   let totalCarrinho = 0;
   modal.innerHTML = `
