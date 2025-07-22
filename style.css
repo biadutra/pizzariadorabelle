@@ -367,3 +367,59 @@ main {
     opacity: 1;
     bottom: 120px;
 }
+
+/*menu esquerdo*/
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 220px;
+  height: 100%;
+  background-color: #fff8e1;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  padding-top: 60px;
+  z-index: 9999;
+  transition: left 0.3s ease;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-lateral ul li {
+  border-bottom: 1px solid #ffd600;
+}
+
+.menu-lateral ul li a {
+  display: block;
+  padding: 15px 20px;
+  color: #c62828;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-lateral ul li a:hover {
+  background-color: #c62828;
+  color: #fff;
+}
+
+.menu-lateral.active {
+  left: 0;
+}
+
+.menu-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #c62828;
+  border: none;
+  color:#ffd600 ;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px 15px;
+  z-index: 10000;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
