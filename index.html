@@ -17,6 +17,29 @@
 
 
   </header>
+
+  <!--menu esquerdo-->
+<nav id="menu-lateral" class="menu-lateral">
+  <ul>
+    <li><a href="#pizzaSalgada">Pizzas Salgadas</a></li>
+    <li><a href="#pizzaDoce">Pizzas Doces</a></li>
+    <li><a href="#esfiha">Esfihas</a></li>
+    <li><a href="#esfihaDoce">Esfihas Doces</a></li>
+    <li><a href="#esfihaFechada">Esfihas Fechadas</a></li>
+    <li><a href="#porcao">Porções</a></li>
+    <li><a href="#beirute">Beirutes</a></li>
+    <li><a href="#aLaCarte">À La Carte</a></li>
+    <li><a href="#lanche">Lanches</a></li>
+    <li><a href="#pastel">Pastéis</a></li>
+    <li><a href="#bebida">Bebidas</a></li>
+    <li><a href="#cerveja600ml">Cervejas</a></li>
+
+  </ul>
+</nav>
+
+<button id="menu-toggle" class="menu-button">&#9776;</button>
+<!---->
+
   <!-- Botão Hambúrguer para mobile -->
   <input type="checkbox" id="cart-toggle" class="cart-toggle" hidden>
   <label for="cart-toggle" class="cart-hamburger">
@@ -39,6 +62,23 @@
   </div>
   <script src="app.js"></script>
   <div id="toast" class="toast"></div>
+
+  <!--menu esquerdo-->
+  <script>
+  const menu = document.getElementById('menu-lateral');
+  const toggle = document.getElementById('menu-toggle');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+      menu.classList.remove('active');
+    }
+  });
+</script>
+
 
 </body>
 
