@@ -4,6 +4,7 @@ const bordas = [
   { nome: "Mussarela", preco: 15.00 },
   { nome: "Cheddar", preco: 15.00 },
   { nome: "Chocolate", preco: 15.00 },
+   { nome: "Sem borda recheada", preco: 0 },
   { nome: "Vulcão Mussarela", preco: 20.00 },
   { nome: "Vulcão Cheddar", preco: 20.00 },
   { nome: "Vulcão Catupiry", preco: 20.00 },
@@ -1885,7 +1886,7 @@ function abrirModalItem(itemId, tipoItem) {
       <select id="bordaItem">
         ${bordas.map((b, i) => {
       if (tipoItem === 'pizzaDoce') {
-        return b.nome === "Chocolate" ? `<option value="${i}">${b.nome} ${b.preco > 0 ? `(+R$${b.preco.toFixed(2)})` : ''}</option>` : '';
+        return b.nome === "Sem borda recheada" ? `<option value="${i}">${b.nome} ${b.preco > 0 ? `(+R$${b.preco.toFixed(2)})` : ''}</option>` : '';
       } else if (tipoItem === 'pizzaSalgada') {
         return b.nome === "Chocolate" ? '' : `<option value="${i}">${b.nome} ${b.preco > 0 ? `(+R$${b.preco.toFixed(2)})` : ''}</option>`;
       }
