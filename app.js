@@ -4,10 +4,10 @@ const bordas = [
   { nome: "Mussarela", preco: 15.00 },
   { nome: "Cheddar", preco: 15.00 },
   { nome: "Chocolate", preco: 15.00 },
-  { nome: "Vulcão Mussarela", preco: 15.00 },
-  { nome: "Vulcão Cheddar", preco: 15.00 },
-  { nome: "Vulcão Catupiry", preco: 15.00 },
-  { nome: "Vulcão Chocolate", preco: 15.00 },
+  { nome: "Vulcão Mussarela", preco: 20.00 },
+  { nome: "Vulcão Cheddar", preco: 20.00 },
+  { nome: "Vulcão Catupiry", preco: 20.00 },
+  { nome: "Vulcão Chocolate", preco: 20.00 },
 ];
 
 // --- Seção de Pizzas Salgadas ---
@@ -838,7 +838,7 @@ const pizzasDoces = [
   {
     id: 65,
     nome: "M&M'S",
-    imagem: "embreve.png",
+    imagem: "img/mms.png",
     precoBase: 50.0,
     precoBroto: 35.0,
     ingredientes: ["Chocolate", "M&M'S"],
@@ -1284,7 +1284,7 @@ const lanches = [
   {
     id: 117,
     nome: "X-Bacon",
-    imagem: "embreve.png",
+    imagem: "img/xbacon.jpg",
     precoBase: 24.0,
     extras: [{ nome: "bacon", preco: 4.0 }],
     categoria: "lanche"
@@ -1316,7 +1316,7 @@ const lanches = [
   {
     id: 121,
     nome: "X-Egg",
-    imagem: "embreve.png",
+    imagem: "img/xegg.jpg",
     precoBase: 23.0,
     extras: [{ nome: "ovo", preco: 3.0 }],
     categoria: "lanche"
@@ -1757,7 +1757,6 @@ const cervejas600ml = [
   // Adicione mais cervejas de 600ml aqui
 ];
 
-
 // Carrinho e controle de meio a meio (permanece o mesmo)
 let carrinho = { itens: [], total: 0 };
 let totalCarrinho = 0;
@@ -1785,18 +1784,26 @@ function renderizarTodasAsSecoes() {
   ];
 
   secoes.forEach(secao => {
-    if (secao.dados.length > 0) { // Renderiza apenas se houver itens na seção
+    if (secao.dados.length > 0) {
       const sectionElement = document.createElement('section');
-      sectionElement.innerHTML = `<h2 class="section-title">${secao.titulo}</h2>`;
+
+      // Cria o título e define o ID com base no tipo da seção
+      const titulo = document.createElement('h2');
+      titulo.className = 'section-title';
+      titulo.innerText = secao.titulo;
+      titulo.id = secao.tipo; // ID agora segue o "tipo" definido
+
+      sectionElement.appendChild(titulo);
+
       const grid = document.createElement('div');
       grid.className = 'grid';
 
       secao.dados.forEach(item => {
         const card = document.createElement('div');
-        card.className = 'item-card'; // Nome genérico para o card
+        card.className = 'item-card';
         let precoDisplay = `R$${item.precoBase.toFixed(2)}`;
 
-        if (item.precoBroto) { // Se for pizza, exibe o preço broto
+        if (item.precoBroto) {
           precoDisplay = `Normal: R$${item.precoBase.toFixed(2)} | Broto: R$${item.precoBroto.toFixed(2)}`;
         }
 
@@ -1816,8 +1823,10 @@ function renderizarTodasAsSecoes() {
           <button class="button" onclick="abrirModalItem(${item.id}, '${secao.tipo}')">Adicionar</button>
           ${meioMeioButton}
         `;
+
         grid.appendChild(card);
       });
+
       sectionElement.appendChild(grid);
       app.appendChild(sectionElement);
     }
@@ -1880,7 +1889,7 @@ function abrirModalItem(itemId, tipoItem) {
       } else if (tipoItem === 'pizzaSalgada') {
         return b.nome === "Chocolate" ? '' : `<option value="${i}">${b.nome} ${b.preco > 0 ? `(+R$${b.preco.toFixed(2)})` : ''}</option>`;
       }
-      return ''; // Não deveria chegar aqui para pizzas
+      return ''; 
     }).join('')}
       </select>
     `;
