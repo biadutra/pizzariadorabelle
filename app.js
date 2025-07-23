@@ -263,7 +263,7 @@ const pizzas = [
   {
     id: 20,
     nome: "Frango com Catupiry",
-    imagem: "img/frangocomcatupiry.png",
+    imagem: "img/frangoccatupiry.png",
     precoBase: 49.0,
     precoBroto: 35.0,
     ingredientes: ["Catupiry", "Peito de Frango desfiado"],
@@ -937,6 +937,13 @@ const esfihasDoces = [
     nome: "Chocolate",
     imagem: "embreve.png",
     precoBase: 6.0,
+    categoria: "esfihaDoce"
+  },
+  {
+    id: 999,
+    nome: "Nutella",
+    imagem: "esfihanutella.png",
+    precoBase: 8.0,
     categoria: "esfihaDoce"
   },
   {
