@@ -956,7 +956,7 @@ const esfihasDoces = [
   {
     id: 80,
     nome: "Prestígio",
-    imagem: "embreve.png",
+    imagem: "esfihaprestigio.png",
     precoBase: 7.0,
     categoria: "esfihaDoce"
   },
