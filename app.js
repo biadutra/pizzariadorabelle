@@ -852,77 +852,77 @@ const pizzasDoces = [
 const esfihas = [
   {
     id: 66,
-    nome: "Carne",
+    nome: "Esfiha de Carne",
     imagem: "embreve.png",
     precoBase: 2.50,
     categoria: "esfiha"
   },
   {
     id: 67,
-    nome: "Queijo",
+    nome: "Esfiha de Queijo",
     imagem: "embreve.png",
     precoBase: 4.00,
     categoria: "esfiha"
   },
   {
     id: 68,
-    nome: "Calabresa",
+    nome: "Esfiha de Calabresa",
     imagem: "embreve.png",
     precoBase: 2.50,
     categoria: "esfiha"
   },
   {
     id: 69,
-    nome: "Frango com Catupiry",
+    nome: " Esfiha de Frango com Catupiry",
     imagem: "embreve.png",
     precoBase: 4.50,
     categoria: "esfiha"
   },
   {
     id: 70,
-    nome: "Frango com Queijo",
+    nome: "Esfiha de Frango com Queijo",
     imagem: "embreve.png",
     precoBase: 4.50,
     categoria: "esfiha"
   },
   {
     id: 71,
-    nome: "Presunto com Queijo",
+    nome: "Esfiha de Presunto com Queijo",
     imagem: "embreve.png",
     precoBase: 5.00,
     categoria: "esfiha"
   },
   {
     id: 72,
-    nome: "Atum com Queijo",
+    nome: "Esfiha de Atum com Queijo",
     imagem: "embreve.png",
     precoBase: 5.00,
     categoria: "esfiha"
   },
   {
     id: 73,
-    nome: "Camarão com Queijo",
+    nome: "Esfiha de Camarão com Queijo",
     imagem: "embreve.png",
     precoBase: 12.00,
     categoria: "esfiha"
   },
   {
     id: 74,
-    nome: "Catupiry",
+    nome: "Esfiha de Catupiry",
     imagem: "embreve.png",
     precoBase: 4.00,
     categoria: "esfiha"
   },
   {
     id: 75,
-    nome: "Escarola com Queijo",
+    nome: "Esfiha de Escarola com Queijo",
     imagem: "embreve.png",
     precoBase: 4.50,
     categoria: "esfiha"
   },
   {
     id: 76,
-    nome: "Calabresa com Queijo",
+    nome: "Esfiha de Calabresa com Queijo",
     imagem: "embreve.png",
     precoBase: 4.50,
     categoria: "esfiha"
@@ -934,56 +934,56 @@ const esfihas = [
 const esfihasDoces = [
   {
     id: 77,
-    nome: "Chocolate",
+    nome: "Esfiha de Chocolate",
     imagem: "embreve.png",
     precoBase: 6.0,
     categoria: "esfihaDoce"
   },
   {
     id: 999,
-    nome: "Nutella",
+    nome: "Esfiha de Nutella",
     imagem: "esfihanutella.png",
     precoBase: 8.0,
     categoria: "esfihaDoce"
   },
   {
     id: 78,
-    nome: "Goiabada com Queijo",
+    nome: "Esfiha de Goiabada com Queijo",
     imagem: "embreve.png",
     precoBase: 9.0,
     categoria: "esfihaDoce"
   },
   {
     id: 79,
-    nome: "Banana",
+    nome: "Esfiha de Banana",
     imagem: "embreve.png",
     precoBase: 7.0,
     categoria: "esfihaDoce"
   },
   {
     id: 80,
-    nome: "Prestígio",
+    nome: "Esfiha de Prestígio",
     imagem: "esfihaprestigio.png",
     precoBase: 7.0,
     categoria: "esfihaDoce"
   },
   {
     id: 81,
-    nome: "Banana com Mussarela",
+    nome: "Esfiha de Banana com Mussarela",
     imagem: "embreve.png",
     precoBase: 8.0,
     categoria: "esfihaDoce"
   },
   {
     id: 82,
-    nome: "M&M'S",
+    nome: "Esfiha de M&M'S",
     imagem: "embreve.png",
     precoBase: 8.0,
     categoria: "esfihaDoce"
   },
   {
     id: 83,
-    nome: "Brigadeiro",
+    nome: "Esfiha de Brigadeiro",
     imagem: "embreve.png",
     precoBase: 8.0,
     categoria: "esfihaDoce"
@@ -996,70 +996,70 @@ const esfihasDoces = [
 const esfihasFechadas = [
   {
     id: 84,
-    nome: "Carne",
+    nome: "Esfiha Fechada Carne",
     imagem: "embreve.png",
     precoBase: 5.0,
     categoria: "esfihaFechada"
   },
   {
     id: 85,
-    nome: "Queijo",
+    nome: "Esfiha Fechada Queijo",
     imagem: "embreve.png",
     precoBase: 5.0,
     categoria: "esfihaFechada"
   },
   {
     id: 86,
-    nome: "Frango",
+    nome: "Esfiha Fechada Frango",
     imagem: "embreve.png",
     precoBase: 5.0,
     categoria: "esfihaFechada"
   },
   {
     id: 87,
-    nome: "Calabresa",
+    nome: "Esfiha Fechada Calabresa",
     imagem: "embreve.png",
     precoBase: 5.0,
     categoria: "esfihaFechada"
   },
   {
     id: 88,
-    nome: "Atum",
+    nome: "Esfiha Fechada Atum",
     imagem: "embreve.png",
     precoBase: 5.0,
     categoria: "esfihaFechada"
   },
   {
     id: 89,
-    nome: "Calabresa com Queijo",
+    nome: "Esfiha Fechada Calabresa com Queijo",
     imagem: "embreve.png",
     precoBase: 7.0,
     categoria: "esfihaFechada"
   },
   {
     id: 90,
-    nome: "Carne com Queijo",
+    nome: "Esfiha Fechada Carne com Queijo",
     imagem: "embreve.png",
     precoBase: 7.0,
     categoria: "esfihaFechada"
   },
   {
     id: 91,
-    nome: "Frango com Queijo",
+    nome: "Esfiha Fechada Frango com Queijo",
     imagem: "embreve.png",
     precoBase: 7.0,
     categoria: "esfihaFechada"
   },
   {
     id: 92,
-    nome: "Frango com Catupiry",
+    nome: "Esfiha Fechada Frango com Catupiry",
     imagem: "embreve.png",
     precoBase: 7.0,
     categoria: "esfihaFechada"
   },
   {
     id: 93,
-    nome: "Carne Seca",
+    nome: "Esfiha Fechada Carne Seca",
     imagem: "embreve.png",
     precoBase: 7.0,
     categoria: "esfihaFechada"
@@ -1071,42 +1071,42 @@ const esfihasFechadas = [
 const porcoes = [
   {
     id: 94,
-    nome: "Mista",
+    nome: "Porção Mista",
     imagem: "img/porcao.png",
     precoBase: 80.0,
     categoria: "porcao"
   },
   {
     id: 95,
-    nome: "Carne de Sol com Mandioca",
+    nome: "Porção Carne de Sol com Mandioca",
     imagem: "embreve.png",
     precoBase: 70.0,
     categoria: "porcao"
   },
   {
     id: 96,
-    nome: "Batata Frita",
+    nome: "Porção Batata Frita",
     imagem: "embreve.png",
     precoBase: 20.0,
     categoria: "porcao"
   },
   {
     id: 97,
-    nome: "Contra Filé",
+    nome: "Porção Contra Filé",
     imagem: "embreve.png",
     precoBase: 60.0,
     categoria: "porcao"
   },
   {
     id: 98,
-    nome: "Calabresa",
+    nome: "Porção Calabresa",
     imagem: "embreve.png",
     precoBase: 30.0,
     categoria: "porcao"
   },
   {
     id: 99,
-    nome: "Frango a Passarinho",
+    nome: "Porção Frango a Passarinho",
     imagem: "embreve.png",
     precoBase: 35.0,
     categoria: "porcao"
@@ -1118,7 +1118,7 @@ const porcoes = [
 const beirutes = [
   {
     id: 100,
-    nome: "Contra Filé",
+    nome: "Beirute Contra Filé",
     imagem: "embreve.png",
     precoBase: 45.0,
     ingredientes: ["Pão sírio", "Mussarela", "Presunto", "Maionese", "Ovo", "Alface", "Tomate"],
@@ -1131,7 +1131,7 @@ const beirutes = [
   },
   {
     id: 102,
-    nome: "Peito de Peru",
+    nome: "Beirute Peito de Peru",
     imagem: "embreve.png",
     precoBase: 40.0,
     ingredientes: ["Pão sírio", "Mussarela", "Presunto", "Maionese", "Ovo", "Alface", "Tomate"],
@@ -1144,7 +1144,7 @@ const beirutes = [
   },
   {
     id: 103,
-    nome: "Frango Desfiado",
+    nome: "Beirute Frango Desfiado",
     imagem: "embreve.png",
     precoBase: 37.0,
     ingredientes: ["Pão sírio", "Mussarela", "Presunto", "Maionese", "Ovo", "Alface", "Tomate"],
@@ -1157,7 +1157,7 @@ const beirutes = [
   },
   {
     id: 104,
-    nome: "Bacon",
+    nome: "Beirute Bacon",
     imagem: "embreve.png",
     precoBase: 40.0,
     ingredientes: ["Pão sírio", "Mussarela", "Presunto", "Maionese", "Ovo", "Alface", "Tomate"],
@@ -1170,7 +1170,7 @@ const beirutes = [
   },
   {
     id: 105,
-    nome: "Calabresa",
+    nome: "Beirute Calabresa",
     imagem: "embreve.png",
     precoBase: 32.0,
     ingredientes: ["Pão sírio", "Mussarela", "Presunto", "Maionese", "Ovo", "Alface", "Tomate"],
@@ -1183,7 +1183,7 @@ const beirutes = [
   },
   {
     id: 106,
-    nome: "Carne Seca",
+    nome: "Beirute Carne Seca",
     imagem: "embreve.png",
     precoBase: 45.0,
     ingredientes: ["Pão sírio", "Mussarela", "Presunto", "Maionese", "Ovo", "Alface", "Tomate"],
@@ -1196,7 +1196,7 @@ const beirutes = [
   },
   {
     id: 107,
-    nome: "Quatro Queijos",
+    nome: "Beirute Quatro Queijos",
     imagem: "embreve.png",
     precoBase: 45.0,
     ingredientes: ["Pão sírio", "Mussarela", "Presunto", "Maionese", "Ovo", "Alface", "Tomate"],
@@ -1213,7 +1213,7 @@ const beirutes = [
 const aLaCarte = [
   {
     id: 108,
-    nome: "Carne Seca Acebolada",
+    nome: "Prato Carne Seca Acebolada",
     imagem: "embreve.png",
     precoBase: 40.0,
     ingredientes: ["Arroz", "Feijão", "Fritas", "Saladas"],
@@ -1229,7 +1229,7 @@ const aLaCarte = [
   },
   {
     id: 110,
-    nome: "Calabresa Acebolada",
+    nome: "Prato Calabresa Acebolada",
     imagem: "embreve.png",
     precoBase: 23.0,
     ingredientes: ["Arroz", "Feijão", "Fritas", "Saladas"],
@@ -1237,7 +1237,7 @@ const aLaCarte = [
   },
   {
     id: 111,
-    nome: "Filé de Frango",
+    nome: "Prato Filé de Frango",
     imagem: "embreve.png",
     precoBase: 25.0,
     ingredientes: ["Arroz", "Feijão", "Fritas", "Saladas"],
@@ -1245,7 +1245,7 @@ const aLaCarte = [
   },
   {
     id: 112,
-    nome: "Filé de Frango a Milanesa",
+    nome: "Prato Filé de Frango a Milanesa",
     imagem: "embreve.png",
     precoBase: 29.0,
     ingredientes: ["Arroz", "Feijão", "Fritas", "Saladas"],
@@ -1253,7 +1253,7 @@ const aLaCarte = [
   },
   {
     id: 113,
-    nome: "Contra Filé Grelhado",
+    nome: "Prato Contra Filé Grelhado",
     imagem: "embreve.png",
     precoBase: 30.0,
     ingredientes: ["Arroz", "Feijão", "Fritas", "Saladas"],
@@ -1261,7 +1261,7 @@ const aLaCarte = [
   },
   {
     id: 114,
-    nome: "Contra Filé Acebolado",
+    nome: "Prato Contra Filé Acebolado",
     imagem: "embreve.png",
     precoBase: 32.0,
     ingredientes: ["Arroz", "Feijão", "Fritas", "Saladas"],
@@ -1269,7 +1269,7 @@ const aLaCarte = [
   },
   {
     id: 115,
-    nome: "Contra Filé a Cavalo",
+    nome: "Prato Contra Filé a Cavalo",
     imagem: "embreve.png",
     precoBase: 34.0,
     ingredientes: ["Arroz", "Feijão", "Fritas", "Saladas"],
@@ -1277,7 +1277,7 @@ const aLaCarte = [
   },
   {
     id: 116,
-    nome: "Contra Filé a Milanesa",
+    nome: "Prato Contra Filé a Milanesa",
     imagem: "embreve.png",
     precoBase: 35.0,
     ingredientes: ["Arroz", "Feijão", "Fritas", "Saladas"],
@@ -1336,49 +1336,49 @@ const lanches = [
 const pasteis = [
   {
     id: 122,
-    nome: "Calabresa",
+    nome: "Pastel de Calabresa",
     imagem: "embreve.png",
     precoBase: 10.0,
     categoria: "pastel",
   },
   {
     id: 123,
-    nome: "Queijo",
+    nome: "Pastel de Queijo",
     imagem: "embreve.png",
     precoBase: 10.0,
     categoria: "pastel",
   },
   {
     id: 124,
-    nome: "Pizza",
+    nome: "Pastel de Pizza",
     imagem: "embreve.png",
     precoBase: 10.0,
     categoria: "pastel",
   },
   {
     id: 125,
-    nome: "Bauru",
+    nome: "Pastel de Bauru",
     imagem: "embreve.png",
     precoBase: 10.0,
     categoria: "pastel",
   },
   {
     id: 126,
-    nome: "Carne",
+    nome: "Pastel de Carne",
     imagem: "embreve.png",
     precoBase: 10.0,
     categoria: "pastel",
   },
   {
     id: 127,
-    nome: "Queijo",
+    nome: "Pastel de Queijo",
     imagem: "embreve.png",
     precoBase: 10.0,
     categoria: "pastel",
   },
   {
     id: 123,
-    nome: "Frango com Catupiry",
+    nome: "Pastel de Frango com Catupiry",
     imagem: "embreve.png",
     precoBase: 12.0,
     categoria: "pastel",
@@ -1644,7 +1644,7 @@ const bebidas = [
   // Adicione mais bebidas aqui
 ];
 
-const cervejas600ml = [
+const cervejas = [
   {
     id: 161,
     nome: "Skol 600ml",
@@ -1652,7 +1652,7 @@ const cervejas600ml = [
     precoBase: 10.00,
     ingredientes: ["Cerveja Pilsen"],
     extras: [],
-    categoria: "cerveja600ml",
+    categoria: "cervejas",
   },
   {
     id: 162,
@@ -1661,7 +1661,7 @@ const cervejas600ml = [
     precoBase: 10.00,
     ingredientes: ["Cerveja Pilsen"],
     extras: [],
-    categoria: "cerveja600ml",
+    categoria: "cervejas",
   },
   {
     id: 163,
@@ -1670,7 +1670,7 @@ const cervejas600ml = [
     precoBase: 12.00,
     ingredientes: ["Cerveja Pilsen"],
     extras: [],
-    categoria: "cerveja600ml",
+    categoria: "cervejas",
   },
   {
     id: 164,
@@ -1679,7 +1679,7 @@ const cervejas600ml = [
     precoBase: 12.00,
     ingredientes: ["Cerveja Pilsen"],
     extras: [],
-    categoria: "cerveja600ml",
+    categoria: "cervejas",
   },
   {
     id: 165,
@@ -1688,7 +1688,7 @@ const cervejas600ml = [
     precoBase: 12.00,
     ingredientes: ["Cerveja Pilsen"],
     extras: [],
-    categoria: "cerveja600ml",
+    categoria: "cervejas",
   },
   {
     id: 166,
@@ -1697,7 +1697,7 @@ const cervejas600ml = [
     precoBase: 12.00,
     ingredientes: ["Cerveja Pilsen"],
     extras: [],
-    categoria: "cerveja600ml",
+    categoria: "cervejas",
   },
   {
     id: 167,
@@ -1706,7 +1706,7 @@ const cervejas600ml = [
     precoBase: 12.00,
     ingredientes: ["Cerveja Pilsen"],
     extras: [],
-    categoria: "cerveja600ml",
+    categoria: "cervejas",
   },
   {
     id: 168,
@@ -1715,7 +1715,7 @@ const cervejas600ml = [
     precoBase: 11.00,
     ingredientes: ["Cerveja Pilsen"],
     extras: [],
-    categoria: "cerveja600ml",
+    categoria: "cervejas",
   },
   {
     id: 169,
@@ -1724,7 +1724,7 @@ const cervejas600ml = [
     precoBase: 15.00,
     ingredientes: ["Cerveja Pilsen"],
     extras: [],
-    categoria: "cerveja600ml",
+    categoria: "cervejas",
   },
   {
     id: 170,
@@ -1733,7 +1733,7 @@ const cervejas600ml = [
     precoBase: 6.00,
     ingredientes: ["Cerveja Pilsen"],
     extras: [],
-    categoria: "cerveja600ml",
+    categoria: "cervejas",
   },
   {
     id: 171,
@@ -1742,7 +1742,7 @@ const cervejas600ml = [
     precoBase: 8.00,
     ingredientes: ["Cerveja Pilsen"],
     extras: [],
-    categoria: "cerveja600ml",
+    categoria: "cervejas",
   },
   {
     id: 172,
@@ -1751,7 +1751,7 @@ const cervejas600ml = [
     precoBase: 5.00,
     ingredientes: ["Cerveja Pilsen"],
     extras: [],
-    categoria: "cerveja600ml",
+    categoria: "cervejas",
   },
   {
     id: 173,
@@ -1760,7 +1760,7 @@ const cervejas600ml = [
     precoBase: 12.00,
     ingredientes: ["Cerveja Pilsen"],
     extras: [],
-    categoria: "cerveja600ml",
+    categoria: "cervejas",
   },
   // Adicione mais cervejas de 600ml aqui
 ];
@@ -1788,7 +1788,7 @@ function renderizarTodasAsSecoes() {
     { titulo: "Lanches", dados: lanches, tipo: "lanche", podeTerMeioMeio: false, podeTerBorda: false, podeTerTamanho: false },
     { titulo: "Pastéis", dados: pasteis, tipo: "pastel", podeTerMeioMeio: false, podeTerBorda: false, podeTerTamanho: false },
     { titulo: "Bebidas", dados: bebidas, tipo: "bebida", podeTerMeioMeio: false, podeTerBorda: false, podeTerTamanho: false },
-    { titulo: "Cervejas 600ml", dados: cervejas600ml, tipo: "cerveja600ml" }
+    { titulo: "Cervejas", dados: cervejas, tipo: "cervejas" }
   ];
 
   secoes.forEach(secao => {
@@ -1860,7 +1860,7 @@ function abrirModalItem(itemId, tipoItem) {
   else if (tipoItem === "lanche") dataSource = lanches;
   else if (tipoItem === "pastel") dataSource = pasteis;
   else if (tipoItem === "bebida") dataSource = bebidas;
-  else if (tipoItem === "cerveja600ml") dataSource = cervejas600ml;
+  else if (tipoItem === "cervejas") dataSource = cervejas;
   else return; // Caso o tipoItem não seja reconhecido
 
   item = dataSource.find(i => i.id === itemId);
@@ -1956,7 +1956,7 @@ function confirmarAdicionar(itemId, tipoItem) {
   else if (tipoItem === "lanche") dataSource = lanches;
   else if (tipoItem === "pastel") dataSource = pasteis;
   else if (tipoItem === "bebida") dataSource = bebidas;
-  else if (tipoItem === "cerveja600ml") dataSource = cervejas600ml;
+  else if (tipoItem === "cervejas") dataSource = cervejas;
   else return;
 
   item = dataSource.find(i => i.id === itemId);
