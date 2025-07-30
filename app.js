@@ -329,7 +329,7 @@ const pizzas = [
   {
     id: 25,
     nome: "Lombo 1",
-    imagem: "lombo1.jpg",
+    imagem: "img/lombo1.jpg",
     precoBase: 49.0,
     precoBroto: 35.0,
     ingredientes: ["Catupiry", "Lombo Fatiado", "Alho Frito"],
@@ -355,7 +355,7 @@ const pizzas = [
   {
     id: 27,
     nome: "LaGrasia",
-    imagem: "lagrasia.jpg",
+    imagem: "img/lagrasia.jpg",
     precoBase: 49.0,
     precoBroto: 35.0,
     ingredientes: ["Peito de Frango desfiado", "Bacon", "Mussarela"],
@@ -446,7 +446,7 @@ const pizzas = [
   {
     id: 34,
     nome: "Palmito",
-    imagem: "palmito.jpg",
+    imagem: "img/palmito.jpg",
     precoBase: 45.0,
     precoBroto: 35.0,
     ingredientes: ["Mussarela", "Palmito"],
@@ -681,7 +681,7 @@ const pizzas = [
   {
     id: 52,
     nome: "Carne Seca 1",
-    imagem: "carne seca 1.jpg",
+    imagem: "img/carne seca 1.jpg",
     precoBase: 49.0,
     precoBroto: 35.0,
     ingredientes: ["Carne Seca", "Cebola", "Mussarela", "Alho"],
@@ -733,7 +733,7 @@ const pizzas = [
   {
     id: 56,
     nome: "Pepperone",
-    imagem: "peperone.jpg",
+    imagem: "img/peperone.jpg",
     precoBase: 57.0,
     precoBroto: 35.0,
     ingredientes: ["Catupiry", "Mussarela", "Pepperone"],
